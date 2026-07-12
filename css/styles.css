@@ -327,7 +327,6 @@ li {
 
 .about-grid {
   display: grid;
-  max-width: 48rem;
   gap: 1rem;
 }
 
