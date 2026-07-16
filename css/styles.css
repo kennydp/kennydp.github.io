@@ -382,8 +382,9 @@ li {
   height: fit-content;
   padding: 0.2rem 0.55rem;
   border: var(--border-width) solid var(--color-ink);
-  background: var(--color-accent-coral);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-ink);
+  box-shadow: none;
+  color: var(--color-bg);
   font-family: var(--font-mono);
   font-weight: 700;
   line-height: 1.1;
@@ -524,6 +525,11 @@ li {
   }
 }
 
+.button:active {
+  box-shadow: var(--shadow-sm);
+  transform: translate(2px, 2px);
+}
+
 @media (max-width: 840px) {
   .experience-grid,
   .writing-grid,
@@ -558,7 +564,7 @@ li {
 
 }
 
-@media (max-width: 520px) {
+@media (max-width: 550px) {
   .nav {
     gap: 0.6rem;
   }
@@ -582,7 +588,7 @@ li {
   .button-row {
     display: grid;
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 3;
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -598,14 +604,18 @@ li {
   }
 
   .hero-copy .eyebrow,
-  .hero-copy h1,
+  .hero-copy h1 {
+    grid-column: 1 / -1;
+  }
+
   .hero-text-grid {
     grid-column: 1 / -1;
+    grid-row: 4;
   }
 
   .hero-portrait {
     grid-column: 2;
-    grid-row: 5;
+    grid-row: 3;
     align-self: stretch;
     width: clamp(6.75rem, 30vw, 8.5rem);
   }
@@ -627,6 +637,7 @@ li {
   }
 
   .button:hover,
+  .button:active,
   .contact-card:hover,
   .writing-card:hover,
   .experience-card:hover,
